@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="557.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.dev.userapp.controller.UserController">
+   <children>
+      <Text layoutX="288.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION DES UTILISATEURS" underline="true">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <VBox layoutX="29.0" layoutY="110.0" prefHeight="323.0" prefWidth="332.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="prenomTfd" promptText="Votre prénom ici">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="nomTfd" promptText="Votre nom ici">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#generateLogin" text="Générer">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <TextField fx:id="loginTfd" editable="false" promptText="Votre login ici">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </Text>
+            <PasswordField fx:id="passwordTfd" promptText="Votre mot de passe ici">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </PasswordField>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </VBox>
+      <ButtonBar layoutX="264.0" layoutY="459.0" prefHeight="40.0" prefWidth="436.0">
+        <buttons>
+          <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveFunction" text="SAVE" />
+            <Button mnemonicParsing="false" onAction="#updateFunction" text="UPDATE" />
+            <Button mnemonicParsing="false" onAction="#deleteFunction" text="DELETE" />
+            <Button mnemonicParsing="false" onAction="#clearFunction" text="CLEAR" />
+            <Button mnemonicParsing="false" onAction="#refreshFunction" text="REFRESH" />
+        </buttons>
+      </ButtonBar>
+      <TableView fx:id="usersTbl" layoutX="394.0" layoutY="110.0" onMouseClicked="#getData" prefHeight="286.0" prefWidth="543.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="prenomCol" prefWidth="144.0" text="PRENOM" />
+            <TableColumn fx:id="nomCol" prefWidth="155.0" text="NOM" />
+            <TableColumn fx:id="loginCol" prefWidth="165.0" text="LOGIN" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
